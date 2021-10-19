@@ -29,6 +29,7 @@ class Application extends BaseApplication
         parent::__construct($kernel);
 
         $this->getDefinition()->addOption(new InputOption('--jms-job-id', null, InputOption::VALUE_REQUIRED, 'The ID of the Job.'));
+        $this->getDefinition()->addOption(new InputOption('--seller-site-name', null, InputOption::VALUE_REQUIRED, 'The sellerSiteName active for this command execution'));
 
         $kernel->boot();
         if ($kernel->getContainer()->getParameter('jms_job_queue.statistics')) {
